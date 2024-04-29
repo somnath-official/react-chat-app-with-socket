@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 import { IUser } from '../../interfaces/UserInterface'
 
 interface IUserSlice {
-  pinned?: IUser[]
+  pinned: IUser[]
   all: IUser[]
 }
 
