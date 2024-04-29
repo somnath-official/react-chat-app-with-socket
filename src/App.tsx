@@ -1,8 +1,11 @@
+import { Chat } from './pages/Chat'
 import './scss/App.scss'
 
 function App() {
   return (
-    <h1>Hello World</h1>
+    <div className='p-2 bg-slate-300 h-screen overflow-hidden'>
+      <Chat />
+    </div>
   )
 }
 
