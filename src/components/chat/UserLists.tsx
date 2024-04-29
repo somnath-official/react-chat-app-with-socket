@@ -1,29 +1,15 @@
-import { useDispatch, useSelector } from "react-redux"
+import { useSelector } from "react-redux"
 import { RootState } from "../../store"
-import { ProfileImage } from "../ProfileImage"
-import { setSelectedUserToChat } from "../../store/features/chatSlice"
-import { IUser } from "../../interfaces/UserInterface"
+import { UserListSection } from "./UserListSection"
 
 export const UserLists = () => {
-  const dispatch = useDispatch()
-  const allUsers = useSelector((state: RootState) => state.users)
-  const selectedUserToChat: IUser | null = useSelector((state: RootState) => state.chat.selectedUserToChat)
+  const pinnedUsers = useSelector((state: RootState) => state.users.pinned)
+  const allUsers = useSelector((state: RootState) => state.users.all)
 
   return (
-    <div>
-      {
-        allUsers.map((user) => {
-          return (
-            <div
-              key={user.id}
-              className={`p-3 cursor-pointer ${selectedUserToChat && selectedUserToChat.id === user.id ? 'bg-gray-200' : ''}`}
-              onClick={() => {dispatch(setSelectedUserToChat({user}))}}
-            >
-              <ProfileImage user={user}/>
-            </div>
-          )
-        })
-      }
+    <div className="flex flex-col gap-y-1 p-1">
+      <UserListSection users={pinnedUsers} name="Pinned" headerBgColor="#2d5fab" />
+      <UserListSection users={allUsers} name="All" />
     </div>
   )
 }
