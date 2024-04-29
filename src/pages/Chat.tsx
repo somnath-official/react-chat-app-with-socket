@@ -4,9 +4,9 @@ import { UserLists } from "../components/chat/UserLists"
 
 export const Chat = () => {
   return (
-    <div className="">
+    <div className="h-screen">
       <ChatHeader />
-      <div className="flex flex-row gap-x-0 border-t" style={{height: 'calc(100vh - 76px)',}}>
+      <div className="flex flex-row gap-x-0 border-t" style={{height: 'calc(100vh - 56px)',}}>
         <div className="w-3/12 bg-white rounded-bl overflow-y-auto border-r">
           <UserLists />
         </div>
