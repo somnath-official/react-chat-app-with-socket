@@ -7,7 +7,7 @@ export const UserLists = () => {
   const allUsers = useSelector((state: RootState) => state.users.all)
 
   return (
-    <div className="flex flex-col gap-y-1">
+    <div className="flex flex-col gap-y-1 p-1">
       <UserListSection users={pinnedUsers} name="Pinned" headerBgColor="#2d5fab" />
       <UserListSection users={allUsers} name="All" />
     </div>
