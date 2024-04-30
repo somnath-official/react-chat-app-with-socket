@@ -7,4 +7,6 @@ export interface IUser {
   email: string
   profileImage: string
   isOnline: boolean
+  isPinned: boolean
+  lastSeen: number | null
 }

@@ -1,4 +1,5 @@
 import { IUser } from "../interfaces/UserInterface"
+import moment from "moment"
 
 export const ProfileImage = ({user}: {user: IUser | null}) => {
   if (user) {
@@ -21,7 +22,10 @@ export const ProfileImage = ({user}: {user: IUser | null}) => {
           {
             user.isOnline
               ? <span className="text-xs text-gray-700">Online</span>
-              : <span className="text-xs text-gray-700">Offline</span>
+              : <span className="text-xs text-gray-700 relative">
+                  <span>Offline</span>
+                  <span>Last seen: {`${user.lastSeen ? moment(user.lastSeen).calendar() : ''}`} </span>
+                </span>
           }
         </div>
       </div>
