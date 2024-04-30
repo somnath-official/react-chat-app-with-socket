@@ -1,8 +1,44 @@
 import { IUser } from "../interfaces/UserInterface"
 import moment from "moment"
-import { motion } from "framer-motion"
+import { gsap } from "gsap";
+import { useEffect, useRef } from "react";
 
 export const ProfileImage = ({user}: {user: IUser | null}) => {
+  const offlineStatusRef = useRef(null)
+  const lastSeenRef = useRef(null)
+
+  useEffect(() => {
+    const tl = gsap.timeline({
+      defaults: { duration: 0.2}
+    })
+
+    const ctx = gsap.context(() => {
+      
+      if (offlineStatusRef.current && lastSeenRef.current) {
+        tl
+        .to(offlineStatusRef.current,{
+          delay: 2,
+          x: 10,
+          opacity: 0,
+          display: 'none',
+        })
+        .fromTo(lastSeenRef.current, {
+          x: -10,
+          opacity: 0,
+          display: 'none',
+        },
+        {
+          x: 0,
+          opacity: 1,
+          display: 'block',
+          ease: 'expo.in',
+        })
+      }
+    })
+
+    return () => ctx.revert()
+  }, [])
+
   if (user) {
     return (
       <div className="flex items-center">
@@ -24,31 +60,8 @@ export const ProfileImage = ({user}: {user: IUser | null}) => {
             user.isOnline
               ? <span className="text-xs text-gray-700">Online</span>
               : <span className="text-xs text-gray-700 relative">
-                  <motion.div
-                    key={user.id}
-                    animate={{
-                      opacity: 0,
-                      transitionEnd: {
-                        display: 'none',
-                      }
-                    }}
-                    transition={{ delay: 2 }}
-                  >
-                    Offline
-                  </motion.div>
-                  <motion.div
-                    key={user.id}
-                    initial={{ display: 'none', opacity: 0, }}
-                    animate={{
-                      opacity: 1,
-                      transitionEnd: {
-                        display: 'block',
-                      }
-                    }}
-                    transition={{ delay: 2 }}
-                  >
-                    Last seen: {`${user.lastSeen ? moment(user.lastSeen).calendar() : ''}`}
-                  </motion.div>
+                  <div ref={offlineStatusRef}>Offline</div>
+                  <div ref={lastSeenRef}>Last seen: {`${user.lastSeen ? moment(user.lastSeen).calendar() : ''}`}</div>
                 </span>
           }
         </div>

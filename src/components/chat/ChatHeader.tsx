@@ -16,14 +16,16 @@ export const ChatHeader = () => {
         <SearchUser />
       </div>
       <div className="w-9/12 p-3 flex items-center justify-between bg-white rounded-tr">
-        <ProfileImage user={selectedUserToChat} />
         {
           selectedUserToChat &&
-          <div className="pr-5 flex items-center gap-x-5">
-            <img src={PhoneIcon} alt="Call icon" className="h-5 w-5 flex-shrink-0 cursor-pointer" />
-            <img src={VideoCameraIcon} alt="Video Camera icon" className="h-5 w-5 flex-shrink-0 cursor-pointer" />
-            <img src={TrippleDotsSvg} alt="Video Camera icon" className="h-5 w-5 flex-shrink-0 cursor-pointer" />
-          </div>
+          <>
+            <ProfileImage user={selectedUserToChat} key={selectedUserToChat.id} />
+            <div className="pr-5 flex items-center gap-x-5">
+              <img src={PhoneIcon} alt="Call icon" className="h-5 w-5 flex-shrink-0 cursor-pointer" />
+              <img src={VideoCameraIcon} alt="Video Camera icon" className="h-5 w-5 flex-shrink-0 cursor-pointer" />
+              <img src={TrippleDotsSvg} alt="Video Camera icon" className="h-5 w-5 flex-shrink-0 cursor-pointer" />
+            </div>
+          </>
         }
       </div>
     </div>
