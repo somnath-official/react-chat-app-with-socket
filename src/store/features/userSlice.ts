@@ -3,19 +3,20 @@ import { createSlice } from '@reduxjs/toolkit'
 import { IUser } from '../../interfaces/UserInterface'
 
 interface IUserSlice {
-  pinned: IUser[]
   all: IUser[]
 }
 
 const initialState: IUserSlice = {
-  pinned: [
+  all: [
     {
       id: 1,
       name: 'Rabin Sardar',
       email: 'rabin@example.com',
       role: 'User',
       isOnline: true,
-      profileImage: 'https://i.pravatar.cc/150?u=rabin@example.com'
+      profileImage: 'https://i.pravatar.cc/150?u=rabin@example.com',
+      isPinned: true,
+      lastSeen: null,
     },
     {
       id: 2,
@@ -23,7 +24,9 @@ const initialState: IUserSlice = {
       email: 'somnath@example.com',
       role: 'Admin',
       isOnline: true,
-      profileImage: 'https://i.pravatar.cc/150?u=somnath@example.com'
+      profileImage: 'https://i.pravatar.cc/150?u=somnath@example.com',
+      isPinned: true,
+      lastSeen: null,
     },
     {
       id: 3,
@@ -31,17 +34,19 @@ const initialState: IUserSlice = {
       email: 'chhabi@example.com',
       role: 'User',
       isOnline: false,
-      profileImage: 'https://i.pravatar.cc/150?u=chhabi@example.com'
+      profileImage: 'https://i.pravatar.cc/150?u=chhabi@example.com',
+      isPinned: false,
+      lastSeen: 1601549410000
     },
-  ],
-  all: [
     {
       id: 4,
       name: 'Gobinda Sardar',
       email: 'gobinda@example.com',
       role: 'User',
       isOnline: false,
-      profileImage: 'https://i.pravatar.cc/150?u=gobinda@example.com'
+      profileImage: 'https://i.pravatar.cc/150?u=gobinda@example.com',
+      isPinned: false,
+      lastSeen: 1714474210000
     },
     {
       id: 5,
@@ -49,7 +54,9 @@ const initialState: IUserSlice = {
       email: 'rina@example.com',
       role: 'User',
       isOnline: true,
-      profileImage: 'https://i.pravatar.cc/150?u=rina@example.com'
+      profileImage: 'https://i.pravatar.cc/150?u=rina@example.com',
+      isPinned: false,
+      lastSeen: null
     },
     {
       id: 6,
@@ -57,7 +64,9 @@ const initialState: IUserSlice = {
       email: 'disha@example.com',
       role: 'User',
       isOnline: false,
-      profileImage: 'https://i.pravatar.cc/150?u=disha@example.com'
+      profileImage: 'https://i.pravatar.cc/150?u=disha@example.com',
+      isPinned: false,
+      lastSeen: 1703991335000
     },
     {
       id: 7,
@@ -65,7 +74,9 @@ const initialState: IUserSlice = {
       email: 'disha@example.com',
       role: 'User',
       isOnline: false,
-      profileImage: 'https://i.pravatar.cc/150?u=disha@example.com'
+      profileImage: 'https://i.pravatar.cc/150?u=disha@example.com',
+      isPinned: false,
+      lastSeen: 1714440558000
     },
     {
       id: 8,
@@ -73,7 +84,9 @@ const initialState: IUserSlice = {
       email: 'disha@example.com',
       role: 'User',
       isOnline: false,
-      profileImage: 'https://i.pravatar.cc/150?u=disha@example.com'
+      profileImage: 'https://i.pravatar.cc/150?u=disha@example.com',
+      isPinned: false,
+      lastSeen: 1601555560000
     },
     {
       id: 9,
@@ -81,7 +94,9 @@ const initialState: IUserSlice = {
       email: 'disha@example.com',
       role: 'User',
       isOnline: false,
-      profileImage: 'https://i.pravatar.cc/150?u=disha@example.com'
+      profileImage: 'https://i.pravatar.cc/150?u=disha@example.com',
+      isPinned: false,
+      lastSeen: 1710778452000
     },
     {
       id: 10,
@@ -89,7 +104,9 @@ const initialState: IUserSlice = {
       email: 'disha@example.com',
       role: 'User',
       isOnline: false,
-      profileImage: 'https://i.pravatar.cc/150?u=disha@example.com'
+      profileImage: 'https://i.pravatar.cc/150?u=disha@example.com',
+      isPinned: false,
+      lastSeen: 1714314311000
     }
   ]
 }
