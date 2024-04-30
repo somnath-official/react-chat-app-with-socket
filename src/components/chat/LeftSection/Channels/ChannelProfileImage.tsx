@@ -1,5 +1,4 @@
 import { IUser } from "@/interfaces/UserInterface"
-import TrippleDotSvg from '@/assets/icons/TrippleDots.svg'
 
 export const ChannelProfileImage = ({user}: {user: IUser | null}) => {
   const handleMenuClicked = (e: React.MouseEvent<HTMLElement>) => {
@@ -31,7 +30,11 @@ export const ChannelProfileImage = ({user}: {user: IUser | null}) => {
             }
           </div>
         </div>
-        <img src={TrippleDotSvg} className="h-5 cursor-pointer" onClick={handleMenuClicked}/>
+        <i
+          className="cursor-pointer fa fa-ellipsis-vertical"
+          onClick={handleMenuClicked}
+          style={{fontWeight: 300}}
+        />
       </div>
     )
   }

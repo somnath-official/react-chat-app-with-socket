@@ -23,11 +23,6 @@ export const SingleChannel = ({users, name, headerBgColor, headerTextColor}: IUs
         onClick={() => setShowSection(prev => !prev)}
         className={`cursor-pointer rounded-t ${!showSection ? 'rounded-b' : ''} py-2`}
         style={{ backgroundColor: headerBgColor ?? '#6b7280', color: headerTextColor ?? '#ffffff', transition: 'background-color 0.2s ease-in'}}
-        // style={
-        //   showSection
-        //     ? { backgroundColor: headerBgColor ?? '#6b7280', color: headerTextColor ?? '#ffffff', transition: 'background-color 0.2s ease-in'}
-        //     : { border: `1px solid ${headerBgColor ?? '#6b7280'}`, color: 'black', transition: 'border 0.5ms ease-in'}
-        // }
       >
         <label className="text-sm font-semibold pl-2 cursor-pointer"># {name}</label>
       </div>

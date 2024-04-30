@@ -2,9 +2,6 @@ import { useSelector } from "react-redux"
 import { IUser } from "@/interfaces/UserInterface"
 import { HeaderProfileImage } from "./HeaderProfileImage"
 import { RootState } from "@/store/index"
-import PhoneIcon from '@/assets/icons/Phone.svg'
-import VideoCameraIcon from '@/assets/icons/VideoCamera.svg'
-import TrippleDotsSvg from '@/assets/icons/TrippleDots.svg'
 import { SearchUser } from "./SearchUser"
 
 export const ChatHeader = () => {
@@ -21,9 +18,9 @@ export const ChatHeader = () => {
           <>
             <HeaderProfileImage user={selectedUserToChat} key={selectedUserToChat.id} />
             <div className="pr-5 flex items-center gap-x-5">
-              <img src={PhoneIcon} alt="Call icon" className="h-5 w-5 flex-shrink-0 cursor-pointer" />
-              <img src={VideoCameraIcon} alt="Video Camera icon" className="h-5 w-5 flex-shrink-0 cursor-pointer" />
-              <img src={TrippleDotsSvg} alt="Video Camera icon" className="h-5 w-5 flex-shrink-0 cursor-pointer" />
+              <i className="fa fa-phone cursor-pointer"></i>
+              <i className="fa fa-video cursor-pointer"></i>
+              <i className="fa fa-ellipsis-v cursor-pointer" style={{fontWeight: 400}}></i>
             </div>
           </>
         }
