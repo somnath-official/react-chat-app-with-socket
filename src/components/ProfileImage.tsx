@@ -1,5 +1,6 @@
 import { IUser } from "../interfaces/UserInterface"
 import moment from "moment"
+import { motion } from "framer-motion"
 
 export const ProfileImage = ({user}: {user: IUser | null}) => {
   if (user) {
@@ -23,8 +24,31 @@ export const ProfileImage = ({user}: {user: IUser | null}) => {
             user.isOnline
               ? <span className="text-xs text-gray-700">Online</span>
               : <span className="text-xs text-gray-700 relative">
-                  <span>Offline</span>
-                  <span>Last seen: {`${user.lastSeen ? moment(user.lastSeen).calendar() : ''}`} </span>
+                  <motion.div
+                    key={user.id}
+                    animate={{
+                      opacity: 0,
+                      transitionEnd: {
+                        display: 'none',
+                      }
+                    }}
+                    transition={{ delay: 2 }}
+                  >
+                    Offline
+                  </motion.div>
+                  <motion.div
+                    key={user.id}
+                    initial={{ display: 'none', opacity: 0, }}
+                    animate={{
+                      opacity: 1,
+                      transitionEnd: {
+                        display: 'block',
+                      }
+                    }}
+                    transition={{ delay: 2 }}
+                  >
+                    Last seen: {`${user.lastSeen ? moment(user.lastSeen).calendar() : ''}`}
+                  </motion.div>
                 </span>
           }
         </div>
