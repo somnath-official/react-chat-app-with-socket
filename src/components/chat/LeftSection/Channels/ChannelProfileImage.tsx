@@ -1,7 +1,7 @@
-import { IUser } from "../../interfaces/UserInterface"
-import TrippleDotSvg from '../../assets/icons/TrippleDots.svg'
+import { IUser } from "@/interfaces/UserInterface"
+import TrippleDotSvg from '@/assets/icons/TrippleDots.svg'
 
-export const UserListProfile = ({user}: {user: IUser | null}) => {
+export const ChannelProfileImage = ({user}: {user: IUser | null}) => {
   const handleMenuClicked = (e: React.MouseEvent<HTMLElement>) => {
     e.stopPropagation()
     console.log('Menu clicked')

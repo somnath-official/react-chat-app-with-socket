@@ -1,8 +1,8 @@
-import SendMessageSvg from '../../assets/icons/Send-message.svg'
-import MicrophoneSvg from '../../assets/icons/Microphone.svg'
-import PaperClipSvg from '../../assets/icons/PaperClip.svg'
+import SendMessageSvg from '@/assets/icons/Send-message.svg'
+import MicrophoneSvg from '@/assets/icons/Microphone.svg'
+import PaperClipSvg from '@/assets/icons/PaperClip.svg'
 
-export const SendMessageBox = () => {
+export const SendMessage = () => {
   return (
     <div className="absolute bottom-0 left-0 flex items-center w-full gap-x-2">
       <div className='w-full flex items-center gap-x-2'>

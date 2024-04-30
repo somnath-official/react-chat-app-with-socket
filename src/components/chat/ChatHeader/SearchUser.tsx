@@ -1,4 +1,4 @@
-import PlusSvg from '../../assets/icons/Plus.svg'
+import PlusSvg from '@/assets/icons/Plus.svg'
 
 export const SearchUser = () => {
   return (

@@ -1,9 +1,9 @@
-import { IUser } from "../interfaces/UserInterface"
+import { IUser } from "@/interfaces/UserInterface"
 import moment from "moment"
 import { gsap } from "gsap";
 import { useEffect, useRef } from "react";
 
-export const ProfileImage = ({user}: {user: IUser | null}) => {
+export const HeaderProfileImage = ({user}: {user: IUser | null}) => {
   const offlineStatusRef = useRef(null)
   const lastSeenRef = useRef(null)
 

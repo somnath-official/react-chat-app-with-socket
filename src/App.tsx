@@ -1,5 +1,5 @@
-import { Chat } from './pages/Chat'
-import './scss/App.scss'
+import { Chat } from '@/pages/Chat'
+import '@/scss/App.scss'
 
 function App() {
   return (

@@ -1,4 +1,4 @@
-export const Messages = () => {
+export const MessageListing = () => {
   return (
     <div>Messages</div>
   )
