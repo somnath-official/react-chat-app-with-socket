@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --scrollbarBgColor: #3353be;
+  --scrollbarTrackBgColor: #a8c6da;
+  --scrollbarTrackHoverColor: #555;
+}
+
 /* width */
 ::-webkit-scrollbar {
   width: 2px;
@@ -9,19 +15,19 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #a8c6da;
+  background: var(--scrollbarTrackBgColor);
   border-radius: 5px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #3353be;
+  background: var(--scrollbarBgColor);
   border-radius: 5px;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: var(--scrollbarTrackHoverColor);
 }
 
 body {
