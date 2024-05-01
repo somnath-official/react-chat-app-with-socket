@@ -2,11 +2,11 @@ import { createSlice } from '@reduxjs/toolkit'
 // import type { PayloadAction } from '@reduxjs/toolkit'
 import { IUser } from '../../interfaces/UserInterface'
 
-interface IUserSlice {
+interface IcontactSlice {
   all: IUser[]
 }
 
-const initialState: IUserSlice = {
+const initialState: IcontactSlice = {
   all: [
     {
       id: 1,
@@ -111,12 +111,11 @@ const initialState: IUserSlice = {
   ]
 }
 
-export const userSlice = createSlice({
-  name: 'users',
+export const contactSlice = createSlice({
+  name: 'contact',
   initialState,
-  reducers: {
-  },
+  reducers: {},
 })
 
-// export const {} = userSlice.actions
-export default userSlice.reducer
+// export const {} = contactSlice.actions
+export default contactSlice.reducer
