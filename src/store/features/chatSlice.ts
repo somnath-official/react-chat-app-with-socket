@@ -2,12 +2,30 @@ import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 import { IUser } from '../../interfaces/UserInterface'
 
+type IMessage  = string
+type MessageType = 'systemGenerated' | 'userMessage'
+
+interface IMessageMeta {
+  id: string
+  type: MessageType
+  sender: IUser
+  receiver: IUser
+  message: IMessage
+  timestamp: number
+  isSeen: boolean
+  isReceived: boolean
+}
+
 interface IChatSlice {
   selectedUserToChat: IUser | null
+  selectedGroupToChat: null,
+  messages: IMessageMeta []
 }
 
 const initialState: IChatSlice = {
-  selectedUserToChat: null
+  selectedUserToChat: null,
+  selectedGroupToChat: null,
+  messages: []
 }
 
 export const chatSlice = createSlice({
