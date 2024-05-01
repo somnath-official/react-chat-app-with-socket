@@ -19,16 +19,6 @@ const initialState: IContactSlice = {
       lastSeen: null,
     },
     {
-      id: 2,
-      name: 'Somnath Sardar',
-      email: 'somnath@example.com',
-      role: 'Admin',
-      isOnline: true,
-      profileImage: 'https://i.pravatar.cc/150?u=somnath@example.com',
-      isPinned: true,
-      lastSeen: null,
-    },
-    {
       id: 3,
       name: 'Chhabi Sardar',
       email: 'chhabi@example.com',

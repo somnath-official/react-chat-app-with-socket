@@ -23,8 +23,11 @@
     "baseUrl": "./src",
     "paths": {
       "@/components/*": ["./components/*"],
+      "@/guards/*": ["./guards/*"],
       "@/interfaces/*": ["./interfaces/*"],
       "@/pages/*": ["./pages/*"],
+      "@/providers/*": ["./providers/*"],
+      "@/routes/*": ["./routes/*"],
       "@/scss/*": ["./scss/*"],
       "@/store/*": ["./store/*"],
     }
