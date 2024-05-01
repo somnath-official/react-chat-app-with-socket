@@ -4,7 +4,7 @@ import chatSlice from './features/chatSlice'
 
 export const store = configureStore({
   reducer: {
-    contants: contactSlice,
+    contacts: contactSlice,
     chat: chatSlice
   },
 })

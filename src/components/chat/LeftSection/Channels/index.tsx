@@ -3,7 +3,7 @@ import { RootState } from "@/store/index"
 import { SingleChannel } from "./SingleChannel"
 
 export const Channels = () => {
-  const allUsers = useSelector((state: RootState) => state.contants.all)
+  const allUsers = useSelector((state: RootState) => state.contacts.all)
   const pinnedUsers = allUsers.filter(user => user.isPinned)
   const remainingUsers = allUsers.filter(user => !user.isPinned)
 

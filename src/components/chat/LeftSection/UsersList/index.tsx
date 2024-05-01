@@ -8,7 +8,7 @@ import gsap from "gsap"
 
 export const UsersList = () => {
   const dispatch = useDispatch()
-  const allContants = useSelector((state: RootState) => state.contants.all)
+  const allContants = useSelector((state: RootState) => state.contacts.all)
   const selectedUserToChat: IUser | null = useSelector((state: RootState) => state.chat.selectedUserToChat)
   const [showChatSection, setShowChatSection] = useState(false)
   const arrowDownRef = useRef(null)
