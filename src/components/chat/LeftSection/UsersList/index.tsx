@@ -20,14 +20,14 @@ export const UsersList = () => {
     if (!showChatSection) {
       tl
       .to(arrowDownRef.current, {rotate: -180,})
-      .to(chatListsRef.current, {display: 'none',})
-      .to(chatListHeaderRef.current, {borderBottomLeftRadius: '0.5rem', borderBottomRightRadius: '0.5rem'})
+      .to(chatListsRef.current, {display: 'none', duration: 0,});
+      gsap.to(chatListHeaderRef.current, {borderBottomLeftRadius: '0.5rem', borderBottomRightRadius: '0.5rem', duration: 0.1})
     }
     else {
       tl
       .to(arrowDownRef.current, {rotate: 0,})
-      .to(chatListsRef.current, {display: 'block',})
-      .to(chatListHeaderRef.current, {borderBottomLeftRadius: '0', borderBottomRightRadius: '0'})
+      .to(chatListsRef.current, {display: 'block',});
+      gsap.to(chatListHeaderRef.current, {borderBottomLeftRadius: '0', borderBottomRightRadius: '0', duration: 0.1})
     }
 
     setShowChatSection(prev => ! prev)
@@ -56,7 +56,9 @@ export const UsersList = () => {
                     return (
                       <div
                         key={user.id}
-                        className={`p-3 cursor-pointer ${selectedUserToChat && selectedUserToChat.id === user.id ? 'bg-gray-200' : ''}`}
+                        className={
+                          `px-3 py-2 cursor-pointer ${selectedUserToChat && selectedUserToChat.id === user.id ? 'bg-gray-200' : 'hover:bg-gray-100'}`
+                        }
                         onClick={() => {dispatch(setSelectedUserToChat({user}))}}
                       >
                         <UserProfile user={user}/>
