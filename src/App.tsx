@@ -9,6 +9,10 @@ import { IUser } from './interfaces/UserInterface'
 const App = () => {
   const dispatch = useDispatch()
 
+  // TODO
+  /**
+   * Need to fetch token from local storage and validate user
+   */
   const getUserFromLocalStorage = (): Promise<IUser | null> => {
     return new Promise((reslove) => {
       const token = localStorage.getItem(LOCAL_STORAGE_AUTH_USER)
